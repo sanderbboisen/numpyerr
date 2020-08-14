@@ -1,0 +1,140 @@
+pipenv lock --clear
+Locking [dev-packages] dependencies…
+Locking [packages] dependencies…
+Building requirements...
+Resolving dependencies...
+✘ Locking Failed!
+ERROR:pip.subprocessor:Command errored out with exit status 1:
+ command: /home/gh/.local/share/virtualenvs/container_info-F5JXIYXe/bin/python /usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/_in_process.py prepare_metadata_for_build_wheel /tmp/tmp12k3_n_w
+     cwd: /tmp/pip-resolver-wamshya7/bottleneck
+Complete output (75 lines):
+running dist_info
+creating /tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info
+writing /tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info/PKG-INFO
+writing dependency_links to /tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info/dependency_links.txt
+writing requirements to /tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info/requires.txt
+writing top-level names to /tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info/top_level.txt
+writing manifest file '/tmp/pip-modern-metadata-ycs60kpn/Bottleneck.egg-info/SOURCES.txt'
+Traceback (most recent call last):
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/core/__init__.py", line 16, in <module>
+    from . import multiarray
+ImportError: /tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/core/multiarray.cpython-36m-x86_64-linux-gnu.so: failed to map segment from shared object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/_in_process.py", line 257, in <module>
+    main()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/_in_process.py", line 240, in main
+    json_out['return_val'] = hook(**hook_input['kwargs'])
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/_in_process.py", line 110, in prepare_metadata_for_build_wheel
+    return hook(metadata_directory, config_settings)
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 174, in prepare_metadata_for_build_wheel
+    self.run_setup()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 267, in run_setup
+    self).run_setup(setup_script=setup_script)
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/build_meta.py", line 158, in run_setup
+    exec(compile(code, __file__, 'exec'), locals())
+  File "setup.py", line 196, in <module>
+    setup(**metadata)
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/__init__.py", line 163, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+    self.run_command(cmd)
+  File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/dist_info.py", line 31, in run
+    egg_info.run()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 297, in run
+    self.find_sources()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 304, in find_sources
+    mm.run()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 535, in run
+    self.add_defaults()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/egg_info.py", line 571, in add_defaults
+    sdist.add_defaults(self)
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 36, in add_defaults
+    self._add_defaults_ext()
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/setuptools/command/py36compat.py", line 119, in _add_defaults_ext
+    build_ext = self.get_finalized_command('build_ext')
+  File "/usr/lib/python3.6/distutils/cmd.py", line 299, in get_finalized_command
+    cmd_obj.ensure_finalized()
+  File "/usr/lib/python3.6/distutils/cmd.py", line 107, in ensure_finalized
+    self.finalize_options()
+  File "setup.py", line 75, in finalize_options
+    import numpy
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/__init__.py", line 142, in <module>
+    from . import add_newdocs
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/add_newdocs.py", line 13, in <module>
+    from numpy.lib import add_newdoc
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/lib/__init__.py", line 8, in <module>
+    from .type_check import *
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/lib/type_check.py", line 11, in <module>
+    import numpy.core.numeric as _nx
+  File "/tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/core/__init__.py", line 26, in <module>
+    raise ImportError(msg)
+ImportError:
+Importing the multiarray numpy extension module failed.  Most
+likely you are trying to import a failed build of numpy.
+If you're working with a numpy git repo, try `git clean -xdf` (removes all
+files not under version control).  Otherwise reinstall numpy.
+
+Original error was: /tmp/pip-build-env-cqq4nmpg/overlay/lib/python3.6/site-packages/numpy/core/multiarray.cpython-36m-x86_64-linux-gnu.so: failed to map segment from shared object
+
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/resolver.py", line 807, in <module>
+    main()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/resolver.py", line 803, in main
+    parsed.requirements_dir, parsed.packages, parse_only=parsed.parse_only)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/resolver.py", line 785, in _main
+    resolve_packages(pre, clear, verbose, system, write, requirements_dir, packages)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/resolver.py", line 753, in resolve_packages
+    requirements_dir=requirements_dir,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/resolver.py", line 736, in resolve
+    req_dir=requirements_dir
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/utils.py", line 1386, in resolve_deps
+    req_dir=req_dir,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/utils.py", line 1093, in actually_resolve_deps
+    resolver.resolve()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/utils.py", line 808, in resolve
+    results = self.resolver.resolve(max_rounds=environments.PIPENV_MAX_ROUNDS)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/resolver.py", line 180, in resolve
+    has_changed, best_matches = self._resolve_one_round()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/resolver.py", line 268, in _resolve_one_round
+    their_constraints.extend(self._iter_dependencies(best_match))
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/resolver.py", line 383, in _iter_dependencies
+    dependencies = self.repository.get_dependencies(ireq)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/repositories/pypi.py", line 226, in get_dependencies
+    legacy_results = self.get_legacy_dependencies(ireq)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/repositories/pypi.py", line 348, in get_legacy_dependencies
+    download_dir, ireq, wheel_cache
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/piptools/repositories/pypi.py", line 303, in resolve_reqs
+    results = resolver._resolve_one(reqset, ireq)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/legacy_resolve.py", line 339, in _resolve_one
+    abstract_dist = self._get_abstract_dist_for(req_to_install)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/legacy_resolve.py", line 287, in _get_abstract_dist_for
+    abstract_dist = self.preparer.prepare_linked_requirement(req)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/operations/prepare.py", line 509, in prepare_linked_requirement
+    req, self.req_tracker, self.finder, self.build_isolation,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/operations/prepare.py", line 95, in _get_prepared_distribution
+    abstract_dist.prepare_distribution_metadata(finder, build_isolation)
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/distributions/sdist.py", line 40, in prepare_distribution_metadata
+    self.req.prepare_metadata()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/req/req_install.py", line 564, in prepare_metadata
+    self.metadata_directory = self._generate_metadata()
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/req/req_install.py", line 551, in _generate_metadata
+    backend=self.pep517_backend,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/operations/build/metadata.py", line 37, in generate_metadata
+    metadata_dir
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/wrappers.py", line 170, in prepare_metadata_for_build_wheel
+    '_allow_fallback': _allow_fallback,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/wrappers.py", line 248, in _call_hook
+    extra_environ=extra_environ
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/utils/subprocess.py", line 275, in runner
+    spinner=spinner,
+  File "/usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_internal/utils/subprocess.py", line 242, in call_subprocess
+    raise InstallationError(exc_msg)
+pipenv.patched.notpip._internal.exceptions.InstallationError: Command errored out with exit status 1: /home/gh/.local/share/virtualenvs/container_info-F5JXIYXe/bin/python /usr/local/lib/python3.6/dist-packages/pipenv/patched/notpip/_vendor/pep517/_in_process.py prepare_metadata_for_build_wheel /tmp/tmp12k3_n_w Check the logs for full command output.
